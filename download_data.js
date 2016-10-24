@@ -22,7 +22,7 @@ var simultaneousDownloads = Math.max(4, Math.min(1, os.cpus().length / 2));
  * 3.) move the meta file to the meta files directory
  */
 function generateCommand(type, directory) {
-  return 'curl --insecure https://whosonfirst.mapzen.com/bundles/wof-' + type + '-latest-bundle.tar.bz2 | tar -xj --strip-components=1 --exclude=README.txt -C ' + directory + ' && mv ' + directory + '/wof-' + type  + '-latest.csv ' + directory + '/meta/';
+  return 'curl --insecure http://rpm.nib.com.au/whosonfirst/wof-' + type + '-latest-bundle.tar.bz2 | tar -xj --strip-components=1 --exclude=README.txt -C ' + directory + ' && mv ' + directory + '/wof-' + type  + '-latest.csv ' + directory + '/meta/';
 }
 
 var bundlesToDownload = bundles.hierarchyBundles;
